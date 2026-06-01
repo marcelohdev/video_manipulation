@@ -21,9 +21,9 @@ interface VideoTrack {
 type FilterType = 'Normal' | 'Sem-cores' | 'Cinza' | 'Vermelho' | 'Verde' | 'Azul';
 
 const playlist: VideoTrack[] = [
-  { id: 1, title: 'Lords of The Rings 1 trailer', src: '/video1.mp4' },
-  { id: 2, title: 'Lords of The Rings 2 trailer', src: '/video2.mp4' },
-  { id: 3, title: 'Lords of The Rings 3 trailer', src: '/video3.mp4' },
+  { id: 1, title: 'Ghost Rider trailer', src: '/video1.mp4' },
+  { id: 2, title: 'The Lord of the Rings: The Two Towers trailer', src: '/video2.mp4' },
+  { id: 3, title: 'The Amazing Spider-Man trailer', src: '/video3.mp4' },
 ];
 
 const filterStyles: Record<FilterType, string> = {
@@ -266,11 +266,10 @@ export default function VideoPlayer() {
               <button
                 key={filter}
                 onClick={() => setActiveFilter(filter)}
-                className={`px-3 py-1.5 text-xs font-semibold rounded border transition-all ${
-                  activeFilter === filter
+                className={`px-3 py-1.5 text-xs font-semibold rounded border transition-all ${activeFilter === filter
                     ? 'bg-orange-500 text-white border-orange-600 shadow-inner'
                     : 'bg-zinc-100 text-zinc-700 border-zinc-400 hover:bg-zinc-50'
-                }`}
+                  }`}
               >
                 {filter === 'Normal' ? 'Sem Filtro' : filter.replace('-', ' ')}
               </button>
@@ -289,11 +288,10 @@ export default function VideoPlayer() {
               <button
                 key={video.id}
                 onClick={() => changeTrack(index)}
-                className={`text-left px-2 py-1.5 text-xs rounded transition-all ${
-                  currentIndex === index
+                className={`text-left px-2 py-1.5 text-xs rounded transition-all ${currentIndex === index
                     ? 'bg-orange-500/10 text-orange-700 font-bold border-l-4 border-orange-500'
                     : 'text-zinc-600 hover:bg-zinc-300/50'
-                }`}
+                  }`}
               >
                 {index + 1}. {video.title}
               </button>
